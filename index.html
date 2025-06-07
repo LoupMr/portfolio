@@ -3,36 +3,69 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loup Martin Marquez Luttringer | CV</title>
+    <title>Loup Martin Marquez Luttringer | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #141e30, #243b55);
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-800 min-h-screen flex items-center justify-center p-4">
-<div class="max-w-4xl w-full bg-white shadow-2xl rounded-2xl p-8">
+<body class="min-h-screen flex items-center justify-center p-4 text-white font-sans">
+
+<div class="glass w-full max-w-2xl p-6 shadow-2xl">
+    <!-- Header -->
     <div class="text-center">
-        <h1 class="text-3xl font-bold mb-2">Loup Marquez Luttringer</h1>
-        <p class="text-sm text-gray-600">Software Engineer | AI Enthusiast | Full-Stack Developer</p>
+        <h1 class="text-2xl sm:text-3xl font-bold mb-1">Loup Martin Marquez Luttringer</h1>
+        <p class="text-sm sm:text-base text-gray-200">Software Engineer | AI Enthusiast | Full-Stack Developer</p>
     </div>
 
-    <div class="mt-6">
-        <h2 class="text-xl font-semibold mb-2">About Me</h2>
-        <p class="text-gray-700 text-sm">
+    <!-- Tabs -->
+    <div class="flex justify-center flex-wrap gap-2 mt-6">
+        <button onclick="showTab('about')" class="tab-btn px-4 py-2 bg-white/10 hover:bg-white/20 rounded text-sm">About</button>
+        <button onclick="showTab('cv')" class="tab-btn px-4 py-2 bg-white/10 hover:bg-white/20 rounded text-sm">CV</button>
+        <button onclick="showTab('contact')" class="tab-btn px-4 py-2 bg-white/10 hover:bg-white/20 rounded text-sm">Contact</button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div id="about" class="tab-content active mt-6">
+        <p class="text-sm text-gray-100">
             I'm a passionate software developer with experience in AI, full-stack web development, and game server architecture. I value clean code, user privacy, and creative problem-solving.
         </p>
     </div>
 
-    <div class="mt-6">
-        <h2 class="text-xl font-semibold mb-2">View My CV</h2>
-        <iframe src="loupmarquez_cv_2025_06_07.pdf" class="w-full h-96 border rounded-lg" type="application/pdf"></iframe>
+    <div id="cv" class="tab-content mt-6">
+        <div class="h-[400px] sm:h-[500px] overflow-hidden rounded-xl border border-white/20">
+            <iframe src="docs/loupmarquez_cv_2025_06_07.pdf" class="w-full h-full"></iframe>
+        </div>
     </div>
 
-    <div class="mt-6">
-        <h2 class="text-xl font-semibold mb-2">Connect With Me</h2>
-        <ul class="text-blue-600 space-y-1">
-            <li><a href="https://www.linkedin.com/in/loupmarquez/" target="_blank" class="hover:underline">LinkedIn</a></li>
-            <li><a href="https://github.com/LoupMr" target="_blank" class="hover:underline">GitHub</a></li>
-            <li><a href="mailto:loup.m.marquez@gmail.com" class="hover:underline">loup.m.marquez@gmail.com</a></li>
-        </ul>
+    <div id="contact" class="tab-content mt-6 space-y-2 text-blue-200 text-sm">
+        <p><a href="https://www.linkedin.com/in/loupmarquez/" target="_blank" class="hover:underline">LinkedIn</a></p>
+        <p><a href="https://github.com/LoupMr" target="_blank" class="hover:underline">GitHub</a></p>
+        <p><a href="mailto:loup.m.marquez@gmail.com" class="hover:underline">loup.m.marquez@gmail.com</a></p>
     </div>
 </div>
+
+<script>
+    function showTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+    }
+</script>
+
 </body>
 </html>
