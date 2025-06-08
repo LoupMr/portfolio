@@ -138,6 +138,52 @@
   }
 }
 
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.collapsible-job.active .collapsible-content {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.collapsible-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.fake-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6c63ff; /* violet-blue tone */
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.toggle-icon {
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.collapsible-job.active .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.collapsible-job.active .fake-button-text::before {
+  content: "";
+}
+
+
+
+
+
 
 
 

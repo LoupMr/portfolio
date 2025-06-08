@@ -157,3 +157,10 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+document.querySelectorAll('.collapsible-toggle').forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    const job = toggle.closest('.collapsible-job');
+    job.classList.toggle('active');
+  });
+});
