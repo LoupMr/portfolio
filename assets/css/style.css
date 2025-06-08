@@ -111,6 +111,35 @@
 
 }
 
+.page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+
+  background: radial-gradient(circle at 20% 30%, rgba(0, 200, 255, 0.1) 0%, transparent 60%),
+  radial-gradient(circle at 80% 70%, rgba(180, 0, 255, 0.1) 0%, transparent 60%);
+  mix-blend-mode: lighten;
+
+  animation: moveFilter 10s ease-in-out infinite;
+}
+
+@keyframes moveFilter {
+  0% {
+    background-position: 20% 30%, 80% 70%;
+  }
+  50% {
+    background-position: 30% 40%, 70% 60%;
+  }
+  100% {
+    background-position: 20% 30%, 80% 70%;
+  }
+}
+
+
 
 
 
