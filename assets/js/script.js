@@ -164,3 +164,43 @@ document.querySelectorAll('.collapsible-toggle').forEach(toggle => {
     job.classList.toggle('active');
   });
 });
+
+// Portfolio project click navigation
+function showProject(projectName) {
+  // Hide all pages
+  pages.forEach(page => {
+    page.classList.remove("active");
+  });
+
+  // Show the selected project article
+  const target = document.querySelector(`[data-page="${projectName}"]`);
+  if (target) {
+    target.classList.add("active");
+    window.scrollTo(0, 0);
+  }
+
+  // Optionally remove 'active' class from nav links
+  navigationLinks.forEach(link => link.classList.remove("active"));
+}
+
+// Back to portfolio
+function goBackToPortfolio() {
+  pages.forEach(page => {
+    page.classList.remove("active");
+  });
+
+  const portfolioPage = document.querySelector('[data-page="portfolio"]');
+  if (portfolioPage) {
+    portfolioPage.classList.add("active");
+    window.scrollTo(0, 0);
+  }
+
+  // Reactivate the nav link
+  navigationLinks.forEach(link => {
+    if (link.innerText.toLowerCase() === "portfolio") {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+}

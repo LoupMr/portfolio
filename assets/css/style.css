@@ -181,14 +181,6 @@
 }
 
 
-
-
-
-
-
-
-
-
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
@@ -1953,4 +1945,12 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+[data-page] {
+  display: none;
+}
+
+[data-page].active {
+  display: block;
 }
