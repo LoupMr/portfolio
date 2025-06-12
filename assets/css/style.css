@@ -1188,6 +1188,23 @@ main {
   #CONTACT
 \*-----------------------------------*/
 
+.contact {
+  display: none;
+  position: relative;
+  z-index: 1;
+}
+
+.contact.active {
+  display: block;
+  animation: fade 0.5s ease backwards;
+}
+
+.contact-form {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 10px;
+}
+
 .mapbox {
   position: relative;
   height: 250px;
@@ -1206,8 +1223,6 @@ main {
   border: none;
   filter: grayscale(1) invert(1);
 }
-
-.contact-form { margin-bottom: 10px; }
 
 .form-title { margin-bottom: 20px; }
 
